@@ -2,8 +2,7 @@
 
 class Point(x: Double, y: Double) {
   
-  def totring() {
-    println("x:" + this.x + " y:" + this.y)
-  }
-  
+  override def toString = "x:" + x + " y:" + y
+    
+ 
 }
