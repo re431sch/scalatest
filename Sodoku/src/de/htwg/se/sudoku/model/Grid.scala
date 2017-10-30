@@ -7,7 +7,7 @@ case class Grid(cells:Matrix[Cell]) {
   def cell(row:Int, col:Int): Cell = cells.cell(row, col)
   def set(row:Int, col:Int, value:Int): Grid = copy(cells.replaceCell(row, col, Cell(value)))
   def row(row:Int): House = House(cells.rows(row))
-  def col(col:Int): House = House(cells.row.map(row=>row(col)))
+  def col(col:Int): House = House(cells.rows.map(row=>row(col)))
   def block(block:Int): House = {
     val blocknum:Int = sqrt(size).toInt
     def blockAt(row:Int, col:Int): Int = (col/blocknum) + (row/blocknum) * blocknum
